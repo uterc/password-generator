@@ -14,7 +14,6 @@ const contOutput = document.getElementById("cont-output");
 let myList = JSON.parse(localStorage.getItem("list")) || [];
 console.log(myList);
 
-
 class Stuff {
   constructor(nome, password) {
     this.name = nome;
@@ -48,31 +47,34 @@ passwordLength.onchange = function() {
 copyButton.onclick = copia;
 generaButton.onclick = generatePassword;
 
-
-
-
 saveButton.onclick = e => {
   if (nomeServizio.value !== "" && copyText.value !== "") {
     const newPass = new Stuff(nomeServizio.value, copyText.value);
     myList.push(newPass);
     localStorage.setItem("list", JSON.stringify(myList));
     console.log(myList);
+    getArrayAndDisplay();
   }
 };
 
-
-
 //function get local storage
 
-
 function getArrayAndDisplay() {
-  let ul = document.createElement('ul');
-  
+  let li = "";
   myList.forEach(service => {
-    let li = document.createElement('li');
-    li.textContent =service.name + ' password: ' + service.password;
-    ul.appendChild(li);
-   });
-  contOutput.appendChild(ul)
+    li +=
+      ' <li class="list"> ' + service.name + ' ' + service.password + "</li>";
+  });
+  contOutput.innerHTML = li;
+  li = "";
 }
+
+
+
+// not ok
 getArrayAndDisplay();
+contOutput.addEventListener('click', (e) =>{
+  if(e.target.classList.contains('list')){
+    e.target.remove();
+  }
+});
