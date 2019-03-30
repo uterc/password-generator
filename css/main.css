@@ -1,0 +1,25 @@
+body {
+  background-color: #87e4fc;
+}
+
+.container {
+  max-width: 960px;
+  text-align: center;
+  margin: 0 auto;
+  border: dotted 2px green;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+#container-numero-caratteri > p {
+  display: inline-block;
+}
+
+button, input[type="button"] {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #2ad4ff;
+}
+/*# sourceMappingURL=main.css.map */
