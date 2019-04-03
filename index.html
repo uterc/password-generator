@@ -10,27 +10,19 @@
   <body>
     <div class="container">
       <h1>Generatore di password semplicemente</h1>
-      <p>
-        Creato da Cretu Laurentiu Adrian per generare password complesse senza
-        utilizzo di un server
-      </p>
-    
-    <div id="generator">
-      <input
-        type="text"
-        name="textGenerated"
-        id="nome-servizio"
-        placeholder="Inserisci il nome del servizio per qui vuoi creare una password"
-      />
-      <input
+      
+      <div id="generator">
+        <div id="container-numero-caratteri">
+
+        <input
         type="text"
         name="textGenerated"
         id="textGenerated"
-        placeholder="qui verra generato la password!!!"
-      />
-      <div id="container-numero-caratteri">
-        <p>numero caratteri</p> 
-            <select id="nr-carateri">
+        placeholder=""
+        />
+        <input type="button" id="copia" value="copy" /><br>
+        <p>Lunghezza password</p> 
+        <select id="nr-carateri">
               <option value="6">6</option>
               <option value="8">8</option>
               <option value="10">10</option>
@@ -40,15 +32,18 @@
               <option value="18">18</option>
               <option value="20">20</option>
             </select>
-      </div>
+            <input type="button" id="genera" value="genera" />
+          </div>
    
-      <input type="button" id="button" value="copy" />
-      <input type="button" id="genera" value="genera" />
     </div>
     <button >salva su file</button>
     <button id="save">salva nel dispositivo</button>
 <div id="cont-output"></div>
-    </div>
+</div>
     <script src="app.js"></script>
+    <p>
+      Creato da Cretu Laurentiu Adrian per generare password complesse senza
+      utilizzo di un server
+    </p>
   </body>
-</html>
+  </html>

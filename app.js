@@ -5,7 +5,7 @@ const symbols = "``-=~!@#$%^&*()_+,./<>?;:[]{}/|";
 
 let passwordLength = document.getElementById("nr-carateri");
 let nomeServizio = document.getElementById("nome-servizio");
-const copyButton = document.getElementById("button");
+const copyButton = document.getElementById("copia");
 const saveButton = document.getElementById("save");
 const generaButton = document.getElementById("genera");
 const copyText = document.getElementById("textGenerated");
@@ -18,6 +18,9 @@ class Stuff {
   constructor(nome, password) {
     this.name = nome;
     this.password = password;
+  }
+  do(){
+    console.log(this);
   }
 }
 
@@ -72,9 +75,11 @@ function getArrayAndDisplay() {
 
 
 // not ok
-getArrayAndDisplay();
+ getArrayAndDisplay();
 contOutput.addEventListener('click', (e) =>{
   if(e.target.classList.contains('list')){
     e.target.remove();
+    myList[1].do();
   }
 });
+
